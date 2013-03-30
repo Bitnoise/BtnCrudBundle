@@ -1,0 +1,52 @@
+{% from 'BtnCrudBundle::flash.html.twig' import session_flash %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8" />
+      <title>{% block title %}Panel administracyjny{% endblock %}</title>
+      {% stylesheets "@control_css" %}
+        <link href="{{ asset_url }}" rel="stylesheet" media="screen" />
+      {% endstylesheets %}
+
+      <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+  </head>
+  <body data-domain="{{ app.request.scheme ~ '://' ~ app.request.httpHost ~ app.request.basePath }}">
+
+      {% block navbar %}
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+          {% include 'BtnCrudBundle::navbar.html.twig' %}
+        {% endif %}
+      {% endblock %}
+
+      {% block body %}
+        <div class="container">
+
+          {{ block('breadcrumb') }}
+
+          {% if app.session.flashbag.peekAll|length > 0 %}
+            <div class="row-fluid">
+                <div class="span12">
+                {{ session_flash() }}
+                </div>
+            </div>
+          {% endif %}
+
+          <div class="row-fluid">
+            <div class="span12">
+
+              {% block content %}
+                  content
+              {% endblock %}
+            </div><!--/span-->
+          </div><!--/row-->
+          <hr>
+
+        </div><!--/.fluid-container-->
+      {% endblock %}
+
+      {% javascripts "@control_js" %}
+        <script src="{{ asset_url }}"></script>
+      {% endjavascripts %}
+  </body>
+</html>
