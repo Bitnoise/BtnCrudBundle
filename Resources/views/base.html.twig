@@ -4,6 +4,7 @@
 <html>
   <head>
       <meta charset="UTF-8" />
+<<<<<<< HEAD
       <title>{% block title %}Control Panel{% endblock %}</title>
       {% stylesheets output='css/bootstrap.css'
         '../vendor/twitter/bootstrap/twitter/bootstrap/less/bootstrap.less'
@@ -25,6 +26,21 @@
   <body>
       {% block navbar %}
         {% include 'BtnCrudBundle::navbar.html.twig' %}
+=======
+      <title>{% block title %}Panel administracyjny{% endblock %}</title>
+      {% stylesheets "@control_css" %}
+        <link href="{{ asset_url }}" rel="stylesheet" media="screen" />
+      {% endstylesheets %}
+
+      <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+  </head>
+  <body data-domain="{{ app.request.scheme ~ '://' ~ app.request.httpHost ~ app.request.basePath }}">
+
+      {% block navbar %}
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+          {% include 'BtnCrudBundle::navbar.html.twig' %}
+        {% endif %}
+>>>>>>> a4a20eb5309ccab523c5c4622161069e3e91b54c
       {% endblock %}
 
       {% block body %}
@@ -41,6 +57,7 @@
           {% endif %}
 
           <div class="row-fluid">
+<<<<<<< HEAD
             {#
             <div class="span3">
               {% block sidebar %}
@@ -56,6 +73,8 @@
               {% endblock %}
             </div><!--/span-->
             #}
+=======
+>>>>>>> a4a20eb5309ccab523c5c4622161069e3e91b54c
             <div class="span12">
 
               {% block content %}
@@ -65,6 +84,7 @@
           </div><!--/row-->
           <hr>
 
+<<<<<<< HEAD
           <footer>
             <p>&copy; Moje inspiracje 2012</p>
           </footer>
@@ -87,5 +107,13 @@
    %}
    <script src="{{ asset_url }}"></script>
  {% endjavascripts %}
+=======
+        </div><!--/.fluid-container-->
+      {% endblock %}
+
+      {% javascripts "@control_js" %}
+        <script src="{{ asset_url }}"></script>
+      {% endjavascripts %}
+>>>>>>> a4a20eb5309ccab523c5c4622161069e3e91b54c
   </body>
 </html>

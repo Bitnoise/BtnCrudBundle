@@ -17,6 +17,10 @@ crud:
         list:    Lista rekordów
         edit:    Edycja rekordu
         new:     Dodanie rekordu
+<<<<<<< HEAD
         show:    Widok rekordu
     new_payment: Nowa płatność
     status_edit: Edytuj status zamówienia
+=======
+        show:    Widok rekordu
+>>>>>>> a4a20eb5309ccab523c5c4622161069e3e91b54c

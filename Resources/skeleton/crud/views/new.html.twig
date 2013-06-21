@@ -1,11 +1,19 @@
 {{ "{% from 'BtnCrudBundle::breadcrumb.html.twig' import breadcrumb %}" }}
+<<<<<<< HEAD
 {{ "{% extends 'BtnCrudBundle::base.html.twig' %}" }}
+=======
+{{ "{% extends '::control.html.twig' %}" }}
+>>>>>>> a4a20eb5309ccab523c5c4622161069e3e91b54c
 
 {{ "{% form_theme form 'BtnCrudBundle:Form:fields.html.twig' %}" }}
 
 {{ "{% block content %}" }}
 
+<<<<<<< HEAD
     <form action="{{ "{{ path('"~ route_name_prefix ~"_create') }}" }}" method="post" {{ "{{ form_enctype(form) }}" }} class="well form-horizontal">
+=======
+    <form action="{{ "{{ path('"~ route_name_prefix ~"_create') }}" }}" method="post" {{ "{{ form_enctype(form) }}" }} class="well form-horizontal" novalidate>
+>>>>>>> a4a20eb5309ccab523c5c4622161069e3e91b54c
           <fieldset>
               <legend>{{ entity }} creation</legend>
               {{ "{{ form_widget(form) }}" }}

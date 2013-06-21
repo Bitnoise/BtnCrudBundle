@@ -71,7 +71,11 @@
 
     <label {% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>
         <input type="radio" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+<<<<<<< HEAD
         {{ label|trans({}, translation_domain)|raw }}
+=======
+        {{ label|trans({}, translation_domain) }}
+>>>>>>> a4a20eb5309ccab523c5c4622161069e3e91b54c
     </label>
 
 
