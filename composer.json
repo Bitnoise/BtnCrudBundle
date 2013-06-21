@@ -1,0 +1,24 @@
+{
+    "name": "bitnoise/crud-bundle",
+    "type": "symfony-bundle",
+    "description": "",
+    "keywords": [ "bitnoise", "utilities", "crud"],
+    "homepage": "https://github.com/Bitnoise/BtnCrudBundle",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Bitnoise Team",
+            "homepage": "http://www.bitnoi.se/",
+            "email": "labs@bitnoi.se"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/symfony": "2.*"
+    },
+    "autoload": {
+        "psr-0": { "Btn\\CrudBundle": "" }
+    },
+    "target-dir": "Btn/CrudBundle"
+}
