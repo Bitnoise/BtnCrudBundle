@@ -1,9 +1,5 @@
 {{ "{% from 'BtnCrudBundle::breadcrumb.html.twig' import breadcrumb %}" }}
-<<<<<<< HEAD
-{{ "{% extends 'BtnCrudBundle::base.html.twig' %}" }}
-=======
 {{ "{% extends '::control.html.twig' %}" }}
->>>>>>> a4a20eb5309ccab523c5c4622161069e3e91b54c
 
 {{ "{% block content %}" }}
     <h2>{{ entity }} list</h2>
@@ -53,11 +49,7 @@
         </tbody>
     </table>
 
-<<<<<<< HEAD
-    {{ knp_pagination_render(pagination) }}
-=======
     {{ '{{ knp_pagination_render(pagination) }}' }}
->>>>>>> a4a20eb5309ccab523c5c4622161069e3e91b54c
 
     {% if 'new' in actions %}
         <a href="{{ "{{ path('"~ route_name_prefix ~"_new') }}" }}" class="btn btn-primary">{{ '{% trans %}' }}crud.create_new{{ '{% endtrans %}' }}</a>
