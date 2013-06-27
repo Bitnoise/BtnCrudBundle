@@ -16,12 +16,30 @@ class CrudCommand extends GenerateDoctrineCrudCommand
         $this->setDescription('Bitnoise version of CRUD generator - twitter bootstrap ready!');
     }
 
-    protected function getGenerator()
+    // protected function getGenerator($bundle = null)
+    // {
+    //     // if (null === $this->generator) {
+    //     //     $this->generator = new DoctrineCrudGenerator($this->getContainer()->get('filesystem'), __DIR__.'/../Resources/skeleton/crud');
+
+    //        if (null === $this->generator) {
+    //             $this->generator = $this->createGenerator();
+    //             $this->generator->setSkeletonDirs($this->getSkeletonDirs($bundle));
+    //         }
+    //     // }
+
+    //     return $this->generator;
+    // }
+    protected function getSkeletonDirs($bundle = null)
     {
-        if (null === $this->generator) {
-            $this->generator = new DoctrineCrudGenerator($this->getContainer()->get('filesystem'), __DIR__.'/../Resources/skeleton/crud');
+        $skeletonDirs = array();
+
+        if (is_dir($dir = __DIR__.'/../Resources/skeleton/crud')) {
+            $skeletonDirs[] = $dir;
         }
 
-        return $this->generator;
+        $skeletonDirs[] = __DIR__.'/../Resources/skeleton';
+        $skeletonDirs[] = __DIR__.'/../Resources';
+
+        return $skeletonDirs;
     }
 }
