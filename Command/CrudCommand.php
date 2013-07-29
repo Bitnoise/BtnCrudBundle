@@ -1,6 +1,7 @@
 <?php
 namespace Btn\CrudBundle\Command;
 
+use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 use Sensio\Bundle\GeneratorBundle\Command\GenerateDoctrineCrudCommand;
 use Sensio\Bundle\GeneratorBundle\Generator\DoctrineCrudGenerator;
 
@@ -29,7 +30,7 @@ class CrudCommand extends GenerateDoctrineCrudCommand
 
     //     return $this->generator;
     // }
-    protected function getSkeletonDirs($bundle = null)
+    protected function getSkeletonDirs(BundleInterface $bundle = null)
     {
         $skeletonDirs = array();
 
