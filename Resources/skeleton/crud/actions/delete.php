@@ -24,7 +24,7 @@
             $em->flush();
 
             $msg = $this->get('translator')->trans('crud.flash.deleted');
-            $this->getRequest()->getSession()->setFlash('success', $msg);
+            $this->getRequest()->getSession()->getFlashBag()->set('success', $msg);
         }
 
         return $this->redirect($this->generateUrl('{{ route_name_prefix }}'));

@@ -20,7 +20,7 @@
             $em->flush();
 
             $msg = $this->get('translator')->trans('crud.flash.saved');
-            $this->getRequest()->getSession()->setFlash('success', $msg);
+            $this->getRequest()->getSession()->getFlashBag()->set('success', $msg);
 
             {% if 'show' in actions -%}
                 return $this->redirect($this->generateUrl('{{ route_name_prefix }}_show', array('id' => $entity->getId())));
