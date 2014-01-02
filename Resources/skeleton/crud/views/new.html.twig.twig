@@ -9,9 +9,11 @@
           <fieldset>
               <legend>{{ entity }} creation</legend>
               {{ "{{ form_widget(form) }}" }}
-              <p>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
                   <button type="submit" class="btn btn-success">{{ '{% trans %}' }}crud.create{{ '{% endtrans %}' }}</button>
-              </p>
+                </div>
+              </div>
         </fieldset>
     </form>
 
