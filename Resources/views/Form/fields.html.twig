@@ -39,15 +39,25 @@
 {% block button_label %}{% endblock %}
 
 {% block form_row %}
-    {% spaceless %}
-        {{ form_errors(form) }}
-        <div class="form-group {% if errors|length > 0 %}error{% endif %}">
+{% spaceless %}
+    {{ form_errors(form) }}
+    <div class="form-group {% if errors|length > 0 %}error{% endif %}">
+        {% if 'checkbox' in form.vars.block_prefixes %}
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    {{ form_widget(form) }}
+                    {{ form_label(form) }}
+                </div>
+            </div>
+        {% else %}
             {{ form_label(form) }}
             <div class="col-sm-10">
-              {{ form_widget(form) }}
+                {{ form_widget(form) }}
+                {{ form_errors(form) }}
             </div>
-        </div>
-    {% endspaceless %}
+        {% endif %}
+    </div>
+{% endspaceless %}
 {% endblock form_row %}
 
 {% block form_label %}
@@ -116,3 +126,25 @@
 
 {% endspaceless %}
 {% endblock radio_widget %}
+
+{% block form %}
+{% spaceless %}
+    {{ form_start(form, {'attr': {'class':'form-horizontal'}}) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+{% endspaceless %}
+{% endblock form %}
+
+{% block button_widget %}
+{% spaceless %}
+    {% if label is empty %}
+        {% set label = name|humanize %}
+    {% endif %}
+    {% set attr = attr|merge({'class': 'btn btn-default'}) %}
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="{{ type|default('button') }}" {{ block('button_attributes') }}>{{ label|trans({}, translation_domain) }}</button>
+        </div>
+    </div>
+{% endspaceless %}
+{% endblock button_widget %}
