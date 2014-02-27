@@ -40,13 +40,13 @@
 
 {% block form_row %}
 {% spaceless %}
-    {#{{ form_errors(form) }}#}
     <div class="form-group {% if errors|length > 0 %}has-error{% endif %}">
         {% if 'checkbox' in form.vars.block_prefixes %}
             <div class="col-sm-offset-2 col-sm-10">
                 <div class="checkbox">
                     {{ form_widget(form) }}
                     {{ form_label(form) }}
+                    {{ form_errors(form) }}
                 </div>
             </div>
         {% else %}
