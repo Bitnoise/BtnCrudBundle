@@ -10,6 +10,7 @@ crud:
     create:     Dodaj nowy
     show:       Zobacz
     edit:       Edytuj
+    end:        Zakończ
     flash:
         saved:   Zapisano zmiany!
         deleted: Usunięto rekord!
