@@ -11,6 +11,7 @@ crud:
     show:       Zobacz
     edit:       Edytuj
     end:        Zakończ
+    confirm:    Czy potwierdzasz usunięcie elementu?
     flash:
         saved:   Zapisano zmiany!
         deleted: Usunięto rekord!
@@ -19,3 +20,4 @@ crud:
         edit:    Edycja rekordu
         new:     Dodanie rekordu
         show:    Widok rekordu
+

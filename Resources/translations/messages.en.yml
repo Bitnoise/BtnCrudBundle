@@ -10,6 +10,9 @@ crud:
     create:     Create
     show:       Show
     edit:       Edit
+    confirm:
+        title: Please confirm
+        message: Are you sure you want to delete this?
     flash:
         saved:   Saved!
         deleted: Deleted!
