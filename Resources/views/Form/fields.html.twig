@@ -72,7 +72,7 @@
     {% if required %}
         {% set label_attr = label_attr|merge({'class': label_attr.class|default('') ~ ' required'}) %}
     {% endif %}
-    {% if form.parent.parent is null %}
+    {% if form.parent.parent is null or (form.parent is defined and form.parent.vars.choices is not defined) %}
         {% set label_attr = label_attr|merge({'class': label_attr.class|default('') ~ ' col-sm-2 control-label'}) %}
     {% endif %}
     <label{% for attrname,attrvalue in label_attr %} {{attrname}}="{{attrvalue}}"{% endfor %}>
