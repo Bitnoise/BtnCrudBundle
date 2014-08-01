@@ -6,5 +6,7 @@ services:
 
     btn_crudbundle.form.type.delete:
         class: Btn\CrudBundle\Form\Type\BtnDeleteType
+        arguments:
+            translator: @translator
         tags:
             - { name: form.type, alias: btn_delete }

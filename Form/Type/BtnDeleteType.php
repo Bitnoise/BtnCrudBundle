@@ -5,12 +5,21 @@ namespace Btn\CrudBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\SubmitButtonTypeInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\Translation\TranslatorInterface;
 
 /**
  *
  */
 class BtnDeleteType extends AbstractType implements SubmitButtonTypeInterface
 {
+    /** @var \Symfony\Component\Translation\TranslatorInterface $translator */
+    protected $translator;
+
+    public function __construct(TranslatorInterface $translator)
+    {
+        $this->translator = $translator;
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -20,8 +29,8 @@ class BtnDeleteType extends AbstractType implements SubmitButtonTypeInterface
             'label' => 'crud.delete',
             'attr'  => array(
                 'data-confirmation' => 'true',
-                'data-message'      => 'crud.confirm.message',
-                'data-title'        => 'crud.confirm.title',
+                'data-message'      => $this->translator->trans('crud.confirm.message'),
+                'data-title'        => $this->translator->trans('crud.confirm.title'),
                 'class'             => 'btn btn-danger delete',
             ),
         ));
