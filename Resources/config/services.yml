@@ -1,0 +1,10 @@
+services:
+    btn_crudbundle.form.type.save:
+        class: Btn\CrudBundle\Form\Type\BtnSaveType
+        tags:
+            - { name: form.type, alias: btn_save }
+
+    btn_crudbundle.form.type.delete:
+        class: Btn\CrudBundle\Form\Type\BtnDeleteType
+        tags:
+            - { name: form.type, alias: btn_delete }
