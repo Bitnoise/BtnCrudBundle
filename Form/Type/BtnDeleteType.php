@@ -40,6 +40,6 @@ class BtnDeleteType extends AbstractType implements SubmitButtonTypeInterface
      */
     public function getName()
     {
-        return 'btn_save';
+        return 'btn_delete';
     }
 }
