@@ -4,6 +4,11 @@ services:
         tags:
             - { name: form.type, alias: btn_save }
 
+    btn_crudbundle.form.type.create:
+        class: Btn\CrudBundle\Form\Type\BtnCreateType
+        tags:
+            - { name: form.type, alias: btn_create }
+
     btn_crudbundle.form.type.delete:
         class: Btn\CrudBundle\Form\Type\BtnDeleteType
         arguments:
